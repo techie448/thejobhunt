@@ -7,6 +7,9 @@ import { WelcomeComponent } from './welcome.component';
 
 @NgModule({
   declarations: [WelcomeComponent],
+  exports: [
+    WelcomeComponent
+  ],
   imports: [
     CommonModule,
     WelcomeRoutingModule
