@@ -1,1 +1,7 @@
 <p>jobs works!</p>
+<ul>
+  <li *ngFor="let job of jobs$ | async">
+    {{ job.title }} |
+    {{ job.company }}
+  </li>
+</ul>
