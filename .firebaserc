@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "thejobhuntinc-70120": {
+      "hosting": {
+        "thejobhunt": [
+          "thejobhuntinc-70120"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "thejobhuntinc-70120"
+  }
+}

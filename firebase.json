@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "thejobhunt",
+    "public": "dist/thejobhunt",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
