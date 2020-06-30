@@ -16,7 +16,7 @@ export class JobsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.jobs$ = this.jobService.getJobs(1);
+    this.jobs$ = this.jobService.getJobs(10);
   }
 
 }
