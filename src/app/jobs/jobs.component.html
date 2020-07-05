@@ -1,7 +1,28 @@
 <p>jobs works!</p>
 <ul>
-  <li *ngFor="let job of jobs$ | async">
-    {{ job.title }} at
-    {{ job.company }}
+  <li *ngFor="let job of jobs$">
+    {{job.title}}
+<!--      <a href="{{ job[page].apply }}">{{ job[page].title }} </a> - {{ job[page].company }}-->
+<!--      <li>apply : {{ job[page].apply }}</li>-->
+<!--      <li>companyURL : </li>-->
+<!--      <li>description : {{ job[page].description }}</li>-->
+<!--      <li>created : {{ job[page].created }}</li>-->
+<!--      <li>location : {{ job[page].location }}</li>-->
+<!--      <li>type : {{ job[page].type }}</li>-->
+<!--      <li>ID : {{ job[page].id }}</li>-->
   </li>
 </ul>
+<div
+infinite-scroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()">
+</div>
+<div *ngIf="(finished && (jobs$.length >= 1))">
+  End of jobs for now.
+</div>
+<div *ngIf="(finished && (jobs$.length < 1))">
+  No Results
+  <a [routerLink]="['/jobs']">View All Jobs</a>
+</div>
+

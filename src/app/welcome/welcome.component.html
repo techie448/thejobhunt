@@ -1,1 +1,7 @@
 <p>welcome works!</p>
+<form (ngSubmit)="search(term)">
+  <label for="term">Search Term:
+    <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)">
+  </label>
+  <button type="submit">Submit</button>
+</form>

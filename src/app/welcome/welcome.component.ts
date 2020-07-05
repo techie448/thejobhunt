@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  term: string;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  search(term: string): void {
+    if (term) { this.router.navigate(['/jobs/' + term]); }
+    else { this.router.navigate(['jobs']); }
+  }
 }

@@ -6,8 +6,9 @@
  import {AngularFirestoreModule} from '@angular/fire/firestore';
  import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
  import {PublicModule} from './public/public.module';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-@NgModule({
+ @NgModule({
   declarations: [
     AppComponent
   ],
@@ -16,7 +17,8 @@
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
-    PublicModule
+    PublicModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
