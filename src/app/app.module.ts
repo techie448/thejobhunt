@@ -7,6 +7,7 @@
  import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
  import {PublicModule} from './public/public.module';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { NgAisModule } from 'angular-instantsearch';
 
  @NgModule({
   declarations: [
@@ -18,7 +19,8 @@
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     PublicModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgAisModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
