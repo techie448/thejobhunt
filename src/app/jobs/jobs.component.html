@@ -1,8 +1,14 @@
 <ul>
   <li *ngFor="let job of jobs">
-      <a href="{{ job.apply }}">{{ job.title }} </a> - {{ job.company }}
+      <a href="{{job.apply}}">{{ job.title }} </a> - {{ job.company }}
     <div>
       {{ job.location }}
+    </div>
+    <div>
+      {{ formatDate(job.created) }}
+    </div>
+    <div>
+      {{ job.source }}
     </div>
   </li>
 </ul>

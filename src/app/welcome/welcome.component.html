@@ -1,8 +1,6 @@
-<p>welcome works!</p>
 <form (ngSubmit)="search(term)">
-  <label for="term">Search Term:
+  <label for="term">Search:
     <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)">
   </label>
   <button type="submit">Submit</button>
-<img src="../../assets/algolia.png" alt="search by Algolia" height="20px" style="margin-left: 10px">
 </form>

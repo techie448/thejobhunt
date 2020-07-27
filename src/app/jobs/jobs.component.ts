@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {JobService} from './shared/job.service';
 import {Job} from './shared/job';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AlgoliaService} from './shared/algolia.service';
+import { format } from 'timeago.js';
 
 @Component({
   selector: 'app-jobs',
@@ -16,10 +17,11 @@ export class JobsComponent implements OnInit {
   args = { page : 0,
     query: undefined
   };
-  constructor(private jobService: JobService, private route: ActivatedRoute, private algoliaService: AlgoliaService) { }
+  constructor(private jobService: JobService, private route: ActivatedRoute,
+              private router: Router, private algoliaService: AlgoliaService) { }
   async ngOnInit() {
     this.args.query = this.route.snapshot.paramMap.get('term') || undefined;
-    this.algoliaService.init({ appId: 'KCCE701SC2', apiKey: '2464b23a99430e71701249738b33bdff' });
+    this.algoliaService.init({ appId: 'KCCE701SC2', apiKey: '795223e6962f85bbb36cb4c7210d4c51' });
     const res = await this.algoliaService.fetchUsers(this.args);
     if ( res.hits.length < 1){
       this.finished = true;
@@ -31,7 +33,6 @@ export class JobsComponent implements OnInit {
     if (!this.finished) {
       this.args.page += 1;
       const res = await this.algoliaService.fetchUsers(this.args);
-      console.log(res.hits.length)
       if ( res.hits.length < 1){
         this.finished = true;
       } else {
@@ -39,5 +40,13 @@ export class JobsComponent implements OnInit {
       }
     }
     }
+    getURL(id: string){
+    this.jobService.getJobUrl(id).subscribe((res) => {
+      window.location.href = res.apply;
+    });
+    }
 
+    formatDate(date: Date): string {
+    return format(date);
+    }
 }

@@ -10,23 +10,8 @@ export class JobService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getJobs(searchTerm?: string, lastKey?: Job): Observable<Job[]>{
-
-return this.firestore.collection<Job>('jobs', (ref) => {
-
-  if (lastKey && searchTerm) {
-    return ref.where('keywords', 'array-contains', searchTerm)
-      .orderBy('created', 'desc')
-      .startAfter(lastKey.created)
-      .limit(10);
-  }else if (searchTerm){
-    return ref.where('keywords', 'array-contains', searchTerm)
-      .orderBy('created', 'desc')
-      .limit(10);
-  } else {
-    return ref.orderBy('created', 'desc')
-      .limit(10);
-  }
-}).valueChanges();
+  getJobUrl(searchId: string): Observable<Job>{
+    const doc = this.firestore.doc<Job>(`jobs/${searchId}`);
+    return doc.valueChanges();
   }
 }

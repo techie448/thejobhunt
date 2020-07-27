@@ -26,6 +26,7 @@
     "firebase": "^7.15.1",
     "ngx-infinite-scroll": "^9.0.0",
     "rxjs": "~6.5.4",
+    "timeago.js": "^4.0.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

@@ -30,3 +30,13 @@ $thejobhunt-theme: mat-dark-theme($thejobhunt-primary, $thejobhunt-accent, $thej
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+li, form{
+  margin: 1vh;
+  padding: 1vh;
+  display: block;
+  border: 1px solid red;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
