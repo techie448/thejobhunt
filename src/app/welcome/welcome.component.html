@@ -10,12 +10,14 @@
   <fieldset>
     <legend>Search</legend>
     <label for="term">
-      <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)">
-      <button type="submit">Submit</button>
+      <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)" class="search">
+      <button type="submit" class="search">Search</button>
 
       <fieldset>
-        <legend>Example</legend><label> Software Engineer, Web Developer, Fullstack Developer, Waterloo,  Junior dev jobs in waterloo</label>
+        <legend>Example</legend>
+        <label> Software Engineer, Web Developer, Fullstack Developer, Waterloo,  Junior dev jobs in waterloo</label>
       </fieldset>
+
     </label>
   </fieldset>
 </form>
