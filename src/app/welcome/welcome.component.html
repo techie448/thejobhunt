@@ -1,6 +1,21 @@
+<header>
+  <h1>The Job Hunt</h1>
+  <h2>Platform for young professionals to get started in their Software/Web Development Career across Canada.</h2>
+</header>
+<main>
+  <h3>The Job Hunt Inc. is a cross-platform idea for young professionals who are passionate about Software/Web Development get introduced to employment opportunities gone though numerous algorithms filtering out the best career advancements.</h3>
+  <h4>The Job Hunt Inc. collects data from from various Job Search platforms such as Linkedin Jobs, Indeed, Glassdoor etc, perform vigorous algorithms to filter out the best opportunities and collate them together for the young professionals of Canada looking to thrive in the field of technology.</h4>
+</main>
 <form (ngSubmit)="search(term)">
-  <label for="term">Search:
-    <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)">
-  </label>
-  <button type="submit">Submit</button>
+  <fieldset>
+    <legend>Search</legend>
+    <label for="term">
+      <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)">
+      <button type="submit">Submit</button>
+
+      <fieldset>
+        <legend>Example</legend><label> Software Engineer, Web Developer, Fullstack Developer, Waterloo,  Junior dev jobs in waterloo</label>
+      </fieldset>
+    </label>
+  </fieldset>
 </form>
