@@ -1,4 +1,7 @@
 <ul>
+  <li>
+    <div>{{hits}} results.</div>
+  </li>
   <li *ngFor="let job of jobs">
       <a href="{{job.apply}}">{{ job.title }} </a> - {{ job.company }}
     <div>
@@ -11,17 +14,16 @@
       {{ job.source }}
     </div>
   </li>
+  <li *ngIf="(finished && (jobs.length < 1))">
+      <a [routerLink]="['/jobs']">View All Jobs</a>
+  </li>
+  <li *ngIf="(finished && (jobs.length >= 1))">
+    End of jobs for now.
+  </li>
 </ul>
 <div
 infinite-scroll
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="1000"
 (scrolled)="onScroll()">
-</div>
-<div *ngIf="(finished && (jobs.length >= 1))">
-  End of jobs for now.
-</div>
-<div *ngIf="(finished && (jobs.length < 1))">
-  No Results
-  <a [routerLink]="['/jobs']">View All Jobs</a>
 </div>

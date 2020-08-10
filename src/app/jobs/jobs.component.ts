@@ -17,6 +17,7 @@ export class JobsComponent implements OnInit {
   args = { page : 0,
     query: undefined
   };
+  hits = 0;
   constructor(private jobService: JobService, private route: ActivatedRoute,
               private router: Router, private algoliaService: AlgoliaService) { }
   async ngOnInit() {
@@ -24,7 +25,8 @@ export class JobsComponent implements OnInit {
     this.algoliaService.init({ appId: 'Z0AS05R0TG', apiKey: 'fc02f9a17fbb22224efa4bcaf4abfcb3' });
     // this.algoliaService.init({ appId: 'PQEI9KMKMK', apiKey: '631c616dbbc48df795ae871c6e029fd9' });
     // this.algoliaService.init({ appId: 'KCCE701SC2', apiKey: '795223e6962f85bbb36cb4c7210d4c51' });
-    const res = await this.algoliaService.fetchUsers(this.args);
+    const res = await this.algoliaService.fetchJobs(this.args);
+    this.hits = res.nbHits;
     if ( res.hits.length < 1){
       this.finished = true;
     } else {
@@ -34,7 +36,7 @@ export class JobsComponent implements OnInit {
   async onScroll() {
     if (!this.finished) {
       this.args.page += 1;
-      const res = await this.algoliaService.fetchUsers(this.args);
+      const res = await this.algoliaService.fetchJobs(this.args);
       if ( res.hits.length < 1){
         this.finished = true;
       } else {

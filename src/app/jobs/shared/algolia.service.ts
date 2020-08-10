@@ -12,8 +12,8 @@ export class AlgoliaService {
     this.client = algoliasearch(config.appId, config.apiKey);
   }
 
-  fetchUsers(options: algoliasearch.QueryParameters) {
-    const userSearch = this.client.initIndex('thejobhunt');
-    return userSearch.search(options);
+  fetchJobs(options: algoliasearch.QueryParameters) {
+    const jobSearch = this.client.initIndex('thejobhunt');
+    return jobSearch.search(options);
   }
 }
