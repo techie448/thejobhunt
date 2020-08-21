@@ -1,11 +1,2 @@
-<h5>version 1.0.0-beta4</h5>
-<ul>
-  <li>
-    <a href="https://github.com/techie448/thejobhunt">Github - Frontend</a> |     <a href="https://github.com/techie448/thejobhunt-api">Github - Backend</a>
-  </li>
-  <li>
-    <a [routerLink]="['']">The Job Hunt</a> |
-    <a [routerLink]="['jobs']">View All Jobs</a>
-  </li>
-</ul>
-<router-outlet></router-outlet>
+<app-tjh-toolbar (toggleClicked)="toggleNav()"></app-tjh-toolbar>
+<app-tjh-sidenav [(toggleOpen)]="toggleState"></app-tjh-sidenav>
