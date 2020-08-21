@@ -50,7 +50,19 @@ mat-icon{
 
 .mat-button {
   text-align: left;
+  white-space: inherit;
+
 }
-.mat-card-content .mat-button{
-  padding-left: 0;
+
+
+@media only screen and (max-width: 768px) {
+  .mat-card-content .mat-button {
+    display: block;
+    padding: 0;
+  }
+
+  .mat-primary {
+    width: 100%;
+    margin: 0;
+  }
 }

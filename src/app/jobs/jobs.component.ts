@@ -31,6 +31,7 @@ export class JobsComponent implements OnInit {
     if ( res.hits.length < 1){
       this.finished = true;
     } else {
+      res.hits.forEach(job => job.title = job.title.replace(/<\/?[^>]+(>|$)/g, ''));
       this.jobs = res.hits as Job[];
     }
   }
@@ -39,6 +40,7 @@ export class JobsComponent implements OnInit {
       this.args.page += 1;
       const res = await this.algoliaService.fetchJobs(this.args);
       if ( res.hits.length < 1){
+        res.hits.forEach(job => job.title = job.title.replace(/<\/?[^>]+(>|$)/g, ''));
         this.finished = true;
       } else {
         this.jobs = [...this.jobs, ...res.hits];
