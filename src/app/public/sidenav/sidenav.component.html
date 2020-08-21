@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" [opened]="toggleOpen" (closed)="toggleOpenChange.emit(false)">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['']" (click)="sidenav.close()">
+        <mat-icon matlistavatar>home</mat-icon>
+        <h3 matLine>Home</h3>
+        <p matLine>The Job Hunt</p>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list>
+    <a mat-list-item
+       [routerLink]="['jobs']"
+       (click)="sidenav.close()">
+        <mat-icon matlistavatar>reorder</mat-icon>
+        <h3 matLine>Jobs</h3>
+        <p matLine>View all Jobs</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

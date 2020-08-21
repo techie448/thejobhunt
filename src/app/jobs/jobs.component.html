@@ -1,29 +1,43 @@
-<ul>
-  <li>
-    <div>{{hits}} results.</div>
-  </li>
-  <li *ngFor="let job of jobs">
-      <a href="{{job.apply}}">{{ job.title }} </a> - {{ job.company }}
-    <div>
-      {{ job.location }}
-    </div>
-    <div>
-      {{ formatDate(job.created) }}
-    </div>
-    <div>
-      {{ job.source }}
-    </div>
-  </li>
-  <li *ngIf="(finished && (jobs.length < 1))">
-      <a [routerLink]="['/jobs']">View All Jobs</a>
-  </li>
-  <li *ngIf="(finished && (jobs.length >= 1))">
-    End of jobs for now.
-  </li>
-</ul>
+<main>
+  <mat-card class="card">
+  <mat-card-content>
+    <p>
+      {{hits}} results.
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="job card" *ngFor="let job of jobs; let i = index">
+  <mat-card-header>
+    <a mat-card-avatar class="header-image" href="{{job.apply}}" target="_blank" [ngStyle]="{'background-color': this.colors[i%this.colors.length]} ">{{job.title[0]}}</a>
+    <a mat-button mat-card-title href="{{job.apply}}" target="_blank">{{ job.title }}</a>
+    <a mat-button mat-card-subtitle href="{{job.apply}}" target="_blank">{{ job.company }}<mat-icon>business</mat-icon></a>
+    <a mat-button mat-card-subtitle href="{{job.apply}}" target="_blank">{{ job.location }}<mat-icon>near_me</mat-icon></a>
+  </mat-card-header>
+  <mat-card-content>
+    <a mat-button href="{{job.apply}}" target="_blank">
+      {{ job.source }}   <mat-icon>source</mat-icon></a>
+    <a mat-button href="{{job.apply}}" target="_blank">
+      {{ formatDate(job.created) }}<mat-icon>schedule</mat-icon></a>
+    <a mat-raised-button color="primary" href="{{job.apply}}" target="_blank">APPLY</a>
+  </mat-card-content>
+
+</mat-card>
+<mat-card class="card" *ngIf="(finished && (jobs.length < 1))">
+  <mat-card-actions>
+    <button mat-button [routerLink]="['/jobs']">View All Jobs</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card class="card" *ngIf="(finished && (jobs.length >= 1))">
+  <mat-card-content>
+    <p>
+      End of jobs for now.
+    </p>
+  </mat-card-content>
+</mat-card>
 <div
 infinite-scroll
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="1000"
 (scrolled)="onScroll()">
 </div>
+</main>

@@ -28,19 +28,7 @@ $thejobhunt-theme: mat-dark-theme($thejobhunt-primary, $thejobhunt-accent, $thej
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: #000}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-li, form, header, main{
-  margin: 1vh;
-  padding: 1vh;
-  display: block;
-  border: 1px solid black;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-.search {
-  padding: 1vh;
-  margin: 1vh;
-}
+a { color: inherit; text-decoration: none; cursor: pointer}
+

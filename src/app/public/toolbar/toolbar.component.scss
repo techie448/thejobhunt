@@ -1,0 +1,23 @@
+mat-toolbar {
+  background-color: #2D67E4;
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+
+
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar-row{
+  padding: 0;
+}
+img, a{
+  height: 2.5rem;
+  margin: auto 0.5rem;
+}

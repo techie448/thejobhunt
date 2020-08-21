@@ -1,0 +1,56 @@
+.header-image{
+  border-radius: 0;
+  line-height: 3.5rem;
+  font-size: 2rem;
+  text-align: center;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+mat-card-content{
+  margin-bottom: 0;
+}
+
+.card{
+  margin: 1rem;
+  background-color: rgba(20,20,20,0.8);
+}
+main{
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      //rgb(45,103,228,0.5),
+      //rgb(45,103,228,0.5),
+      //rgb(0,62,177,0.5),
+      //rgb(0,25,128,0.5),
+      //rgb(0,0,83,0.5),
+      //rgb(0,0,43,0.5),
+        rgb(0,0,1,0.3),
+        rgba(0, 0,0,0.3)
+    ),
+      /* bottom, image */
+    url('src/assets/jobsBackground.svg') no-repeat center fixed;
+  background-size: cover;
+}
+
+.mat-raised-button{
+  margin-left: 2rem;
+}
+
+.dummy {
+  cursor: inherit;
+}
+
+.mat-card-subtitle{
+  display: inline-block;
+}
+
+mat-icon{
+  margin: 0 0.4rem;
+}
+
+.mat-button {
+  text-align: left;
+}
+.mat-card-content .mat-button{
+  padding-left: 0;
+}

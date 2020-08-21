@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  toggleState: boolean;
+
+  toggleNav() {
+    this.toggleState = !this.toggleState;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

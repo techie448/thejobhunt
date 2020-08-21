@@ -1,23 +1,25 @@
-<header>
-  <h1>The Job Hunt</h1>
-  <h2>Platform for young professionals to get started in their Software/Web Development Career across Canada.</h2>
-</header>
-<main>
-  <h3>The Job Hunt Inc. is a cross-platform idea for young professionals who are passionate about Software/Web Development get introduced to employment opportunities gone though numerous algorithms filtering out the best career advancements.</h3>
-  <h4>The Job Hunt Inc. collects data from from various Job Search platforms such as Linkedin Jobs, Indeed, Glassdoor etc, perform vigorous algorithms to filter out the best opportunities and collate them together for the young professionals of Canada looking to thrive in the field of technology.</h4>
-</main>
-<form (ngSubmit)="search(term)">
-  <fieldset>
-    <legend>Search</legend>
-    <label for="term">
-      <input id="term" name="term" required type="text" [(ngModel)]="term" (keyup.enter)="search(term)" class="search">
-      <button type="submit" class="search">Search</button>
-
-      <fieldset>
-        <legend>Example</legend>
-        <label> Software Engineer, Web Developer, Fullstack Developer, Waterloo,  Junior dev jobs in waterloo</label>
-      </fieldset>
-
-    </label>
-  </fieldset>
-</form>
+<mat-card class="hero-card">
+  <mat-card-header>
+      <img src="assets/logo.svg" alt="The Job Hunt Logo" class="logo">
+      <h1>The Job Hunt</h1>
+    <p>For Developers by Devleopers</p>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card-title>Platform for young professionals to get started in their Software/Web Development Career across Canada.</mat-card-title>
+<!--    <p>-->
+<!--      The Job Hunt Inc. is a cross-platform idea for young professionals who are passionate about Software/Web Development get introduced to employment opportunities gone though numerous algorithms filtering out the best career advancements.-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      The Job Hunt Inc. collects data from from various Job Search platforms such as Linkedin Jobs, Indeed, Glassdoor etc, perform vigorous algorithms to filter out the best opportunities and collate them together for the young professionals of Canada looking to thrive in the field of technology.-->
+<!--    </p>-->
+</mat-card-content>
+  <mat-card-footer>
+    <form (ngSubmit)="search(term)">
+      <mat-form-field class="remove-padding">
+        <mat-label>Search Jobs</mat-label>
+        <input matInput id="term" name="term" placeholder="Ex. Web Developer jobs in Toronto" [(ngModel)]="term" (keyup.enter)="search(term)">
+      </mat-form-field>
+      <button mat-raised-button type="submit">SEARCH</button>
+    </form>
+  </mat-card-footer>
+</mat-card>
