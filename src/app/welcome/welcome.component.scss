@@ -81,7 +81,9 @@ mat-card{
   mat-card-header h1 {
     font-size: 3rem;
   }
-
+  .hero-card {
+    height: 100%;
+  }
   form {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
