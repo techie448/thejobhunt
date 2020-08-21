@@ -1,4 +1,4 @@
-# Thejobhunt
+# The Job Hunt
 
 Angular Firebase Material Full Stack Project
 
