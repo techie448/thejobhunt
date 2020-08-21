@@ -16,20 +16,14 @@ mat-card-content{
 }
 main{
   background:
-    /* top, transparent red, faked with gradient */
     linear-gradient(
-      //rgb(45,103,228,0.5),
-      //rgb(45,103,228,0.5),
-      //rgb(0,62,177,0.5),
-      //rgb(0,25,128,0.5),
-      //rgb(0,0,83,0.5),
-      //rgb(0,0,43,0.5),
         rgb(0,0,1,0.3),
         rgba(0, 0,0,0.3)
     ),
       /* bottom, image */
     url('src/assets/jobsBackground.svg') no-repeat center fixed;
   background-size: cover;
+  max-width: 100vw;
 }
 
 .mat-raised-button{
@@ -51,6 +45,20 @@ mat-icon{
 .mat-button {
   text-align: left;
 }
-.mat-card-content .mat-button{
-  padding-left: 0;
+
+
+.mat-card-title{
+  white-space: inherit;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .mat-button, .mat-raised-button{
+    display: block;
+    margin: auto;
+  }
+  .mat-raised-button{
+    margin-top: 1rem;
+  }
 }
