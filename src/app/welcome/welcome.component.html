@@ -2,10 +2,10 @@
   <mat-card-header>
       <img src="assets/logo.svg" alt="The Job Hunt Logo" class="logo">
       <h1>The Job Hunt</h1>
-    <p>For Developers by Devleopers</p>
+    <p>For Business Analysts</p>
   </mat-card-header>
   <mat-card-content>
-    <mat-card-title>Platform for young professionals to get started in their Software/Web Development Career across Canada.</mat-card-title>
+    <mat-card-title>Platform for young professionals to get started in their ITBA Career across Canada.</mat-card-title>
 <!--    <p>-->
 <!--      The Job Hunt Inc. is a cross-platform idea for young professionals who are passionate about Software/Web Development get introduced to employment opportunities gone though numerous algorithms filtering out the best career advancements.-->
 <!--    </p>-->
@@ -17,7 +17,7 @@
     <form (ngSubmit)="search(term)">
       <mat-form-field class="remove-padding">
         <mat-label>Search Jobs</mat-label>
-        <input matInput id="term" name="term" placeholder="Ex. Web Developer jobs in Toronto" [(ngModel)]="term" (keyup.enter)="search(term)">
+        <input matInput id="term" name="term" placeholder="Ex. Business Analyst / Bank / Toronto" [(ngModel)]="term" (keyup.enter)="search(term)">
       </mat-form-field>
       <button mat-raised-button type="submit">SEARCH</button>
     </form>
