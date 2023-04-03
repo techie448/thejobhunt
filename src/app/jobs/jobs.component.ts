@@ -23,7 +23,8 @@ export class JobsComponent implements OnInit {
               private router: Router, private algoliaService: AlgoliaService) { }
   async ngOnInit() {
     this.args.query = this.route.snapshot.paramMap.get('term') || undefined;
-    this.algoliaService.init({ appId: 'SRGHXSCUFK', apiKey: 'ba86634e911273b9ce618a086ffe2a40' });
+    this.algoliaService.init({ appId: '6NFL8BBB5W', apiKey: '0a158aabccb2832caf83cbbbbbd0625a' });
+    // this.algoliaService.init({ appId: 'SRGHXSCUFK', apiKey: 'ba86634e911273b9ce618a086ffe2a40' });
     // this.algoliaService.init({ appId: '2LB3LAKQMV', apiKey: '19cc52ff021f487f8f18f43453de7361' });
     //this.algoliaService.init({ appId: 'Z0AS05R0TG', apiKey: 'fc02f9a17fbb22224efa4bcaf4abfcb3' });
     // this.algoliaService.init({ appId: 'PQEI9KMKMK', apiKey: '631c616dbbc48df795ae871c6e029fd9' });
